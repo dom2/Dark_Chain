@@ -82,6 +82,14 @@ const config = {
 /*
 * here using hoisting so don't use `var NAME = function()...`
 */
+function setServerEnv() {
+  return new webpack.DefinePlugin({
+    'process.env': {
+      'SERVER': JSON.stringify('http://129.146.106.151:8080/')
+    }
+  });
+}
+
 function setNodeEnv() {
   return new webpack.DefinePlugin({
     'process.env': {
